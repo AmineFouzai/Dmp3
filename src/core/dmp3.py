@@ -40,9 +40,9 @@ class DMP3(object):
                 except:
                     self.url=re.search('sd_src:"(.+?)"',soup.text)[1]
                 if self.format_type=="mp3":
-                    fullfilename = os.path.join(os.getcwd()+"\cache", "download.mp3")
+                    fullfilename = os.path.join(os.getcwd()+"/cache", "download.mp3")
                 else:
-                    fullfilename = os.path.join(os.getcwd()+"\cache", "download.mp4")
+                    fullfilename = os.path.join(os.getcwd()+"/cache", "download.mp4")
                 result=urllib.request.urlretrieve(self.url,fullfilename,tqdm.update_to,data=None)
                 tqdm.total = tqdm.n
             return result
