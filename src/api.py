@@ -9,9 +9,6 @@ from pydantic import BaseModel
 class URL(BaseModel):
     url: str
     format:str
-    
-class File(BaseModel):
-    filename: str
 
 @app.post("/")
 async def search(url: URL):
