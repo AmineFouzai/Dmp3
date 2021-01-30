@@ -28,28 +28,33 @@ class DMP3(object):
                         }],
                         }) 
         else:
-            self.ydl=YoutubeDL({"outtmpl": './cache/%(id)s.%(ext)s'})
+            self.ydl=YoutubeDL({"outtmpl": './cache/%(id)s.%(ext)s','format':'137'})
         
 
     def download(self):
-        if "facebook" in self.url:
-            soup=requests.get(self.url)
-            with TqdmUpTo(unit='B', unit_scale=True, unit_divisor=1024, miniters=1,desc=self.url.split('/')[-1]) as tqdm:
-                try:
-                    self.url=re.search('hd_src:"(.+?)"',soup.text)[1]
-                except:
-                    self.url=re.search('sd_src:"(.+?)"',soup.text)[1]
-                if self.format_type=="mp3":
-                    fullfilename = os.path.join(os.getcwd()+"/cache", "download.mp3")
-                else:
-                    fullfilename = os.path.join(os.getcwd()+"/cache", "download.mp4")
-                result=urllib.request.urlretrieve(self.url,fullfilename,tqdm.update_to,data=None)
-                tqdm.total = tqdm.n
-            return result
-        else:
-            with self.ydl:
-                result=self.ydl.extract_info(
-                    self.url, 
-                    download=True)
-            return result
-    
+        try:
+            if "facebook" in self.url:
+                soup=requests.get(self.url)
+                with TqdmUpTo(unit='B', unit_scale=True, unit_divisor=1024, miniters=1,desc=self.url.split('/')[-1]) as tqdm:
+                    try:
+                        self.url=re.search('hd_src:"(.+?)"',soup.text)[1]
+                    except:
+                        self.url=re.search('sd_src:"(.+?)"',soup.text)[1]
+                    if self.format_type=="mp3":
+                        filename="download.mp3"
+                        fullfilename = os.path.join(os.getcwd()+"\cache", filename)
+                    else:
+                        filename="download.mp4"
+                        fullfilename = os.path.join(os.getcwd()+"\cache", filename)
+                    urllib.request.urlretrieve(self.url,fullfilename,tqdm.update_to,data=None)
+                    tqdm.total = tqdm.n
+                return {"id":"download"}
+            else:
+                with self.ydl:
+                    result=self.ydl.extract_info(
+                        self.url, 
+                        download=True)
+               
+                return  {"id":result['id']}
+        except Exception as e:
+            return e
