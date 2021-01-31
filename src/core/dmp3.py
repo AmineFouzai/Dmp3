@@ -12,8 +12,6 @@ class TqdmUpTo(tqdm):
 
 class DMP3(object):
     
-    
-
     def __init__(self,url,format_type):
         self.url=url
         self.format_type=format_type
