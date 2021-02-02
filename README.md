@@ -21,5 +21,5 @@
 
 </p>
 
-this project is made by tow maintainers see the front side on my friend repo : https://github.com/ChedlyHammami/DMP3/
+<p>this project is made by tow maintainers see the front side on my friend repo : https://github.com/ChedlyHammami/DMP3/</p>
 <p align="center"><img width="100" height="100" align="center" src="https://avatars.githubusercontent.com/u/56229742?s=400&u=9fc0fbc58b48248838a27a6d784c37d1bfb80ece&v=4"></p>
