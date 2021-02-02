@@ -1,6 +1,7 @@
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
-<p align="center"><img align="center" src="https://github.com/MedAmineFouzai/Dmp3/blob/main/logo.png"></p>
+<p align="center"><img align="center" src="https://github.com/ChedlyHammami/DMP3/blob/main/src/images/logo2.svg"></p>
+
 
 <p align="center">
 
@@ -16,4 +17,8 @@
 </p>
 
 <p align="center">
- video and audio downloader from media soruces over the network this is the Back-End. </p>
+ video and audio downloader from media soruces over the network this is the Back-End.
+
+</p>
+
+this project is made by tow maintainers see the front side on my friend repo : https://github.com/ChedlyHammami/DMP3/
