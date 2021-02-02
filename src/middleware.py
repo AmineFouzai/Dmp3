@@ -1,10 +1,7 @@
 from fastapi.middleware.cors import CORSMiddleware
 
 origins = [
-    "http://dmp3app.herokuapp.com/",
-    "https://dmp3app.herokuapp.com/",
-    "http://localhost",
-    "http://localhost:8080",
+    "*"
 ]
 
 def wrap_middleware(app):
